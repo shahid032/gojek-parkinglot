@@ -27,16 +27,18 @@ public interface ParkingLot {
 	public ParkingSlots getParkingSlots();
 	
 	/**
-	 * 
-	 * @param v take a Vehicle as an input parameter
+	 * This method is corresponding to command Park and will assign the available slot
+	 * @param clour - colour of the Vehicle
+	 * @param regNum - registration Number of the Vehicle 
 	 * @return the slot assigned for parking , if not available return null;
 	 */
 	public Slot assignSlot(String clour,String regNum);
 	
 	/**
-	 * 
+	 * This method is corresponding to command "leave". 
 	 * @param slot - is marked free 
-	 * @return - return Slot which is marked free
+	 * @return - return Slot which is marked free. In case Slot is already free it will return null
+	 * And will print the same output on the console.
 	 */
 	public Slot markSlotFree(Slot slot);
 	
