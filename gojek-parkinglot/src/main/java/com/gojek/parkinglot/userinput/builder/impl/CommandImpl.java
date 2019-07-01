@@ -81,16 +81,16 @@ public class CommandImpl implements Command{
 	
 	private void status(){
 		
-		String header = "Slot No."+"\t" +"Registration No+"+"\t"+ "Colour";
+		String header = "Slot No."+"    "+"Registration No"+"    "+ "Colour";
 		System.out.println(header);
 		int regNoIdx = header.indexOf("Registration");
 		int colourIdx = header.indexOf("Colour");
 		for(Entry<Slot,Vehicle> entry : parkingLot.getParkingSlots().getOccupiedSlots().getSlotToVehicle().entrySet()){
 			System.out.print(entry.getKey().getId());
 			printSpaces(String.valueOf(entry.getKey().getId()).length(),regNoIdx);
-			System.out.print("\t"+entry.getValue().getRegistrationNumber());
+			System.out.print(entry.getValue().getRegistrationNumber());
 			printSpaces(regNoIdx+entry.getValue().getRegistrationNumber().length(), colourIdx);
-			System.out.println("\t"+entry.getValue().getColour());
+			System.out.println(entry.getValue().getColour());
 		}
 		
 	}
