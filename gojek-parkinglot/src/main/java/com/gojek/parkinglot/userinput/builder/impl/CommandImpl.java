@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 import com.gojek.parkinglot.api.ParkingLot;
 import com.gojek.parkinglot.builder.impl.ParkingLotSingleton;
 import com.gojek.parkinglot.builder.impl.Slot;
+import com.gojek.parkinglot.constants.Constants;
 import com.gojek.parkinglot.userinput.builder.Command;
 import com.gojek.parkinglot.builder.Vehicle;
 
@@ -22,32 +23,32 @@ public class CommandImpl implements Command{
 	@Override
 	public void call(String commandId, String[] args) throws IOException{
 		
-		if(commandId.equals("create_parking_lot")){
+		if(commandId.equals(Constants.CREATE_PARKING_LOT)){
 			createParkingLot(Integer.parseInt(args[0]));
 		}
-		else if(commandId.equals("park")){
+		else if(commandId.equals(Constants.PARK)){
 			park(args[1], args[0]);
 		}
-		else if(commandId.equals("leave")){
+		else if(commandId.equals(Constants.LEAVE)){
 			leave(new Slot(Integer.parseInt(args[0])));
 		}
-		else if(commandId.equals("status")){
+		else if(commandId.equals(Constants.STATUS)){
 			status();
 		}
-		else if(commandId.equals("registration_numbers_for_cars_with_colour")){
+		else if(commandId.equals(Constants.REG_NUMS_FOR_VEHICLE_WITH_COLOUR)){
 			printAllRegNumByColour(args[0]);
 		}
-		else if(commandId.equals("slot_numbers_for_cars_with_colour")){
+		else if(commandId.equals(Constants.SLOT_NUMS_FOR_VEHICLE_WITH_COLOUR)){
 			printAllSlotByClolour(args[0]);
 		}
-		else if(commandId.equals("slot_number_for_registration_number")){
+		else if(commandId.equals(Constants.SLOT_NUM_FOR_REG_NUM)){
 			printSlotNumByRegNum(args[0]);
 		}
-		else if(commandId.equals("exit")){
+		else if(commandId.equals(Constants.EXIT)){
 			System.exit(0);
 		}
 		else{
-			System.out.println("Invalid command");
+			System.out.println(Constants.INVALID_COMMAND);
 		}
 		
 	}
@@ -122,7 +123,7 @@ public class CommandImpl implements Command{
 	private void printSlotNumByRegNum(String regNum){
 		
 		if(parkingLot.getSlotNumByRegNum(regNum) == null)
-			System.out.println("Not found");
+			System.out.println(Constants.NOT_FOUND);
 		else{
 			System.out.println(parkingLot.getSlotNumByRegNum(regNum).getId());
 		}
