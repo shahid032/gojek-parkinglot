@@ -24,7 +24,7 @@ public class CarTest {
 		AssertJUnit.assertEquals(car1.equals(car2), false);
 		AssertJUnit.assertEquals(car1.equals(new Car("Black","1")), true);
 		AssertJUnit.assertEquals(car1.equals(new Car("Blue","2")), false);
-		AssertJUnit.assertEquals(new Car("Black","KA123").equals(new Car("Blue","kA123")), true);
+		AssertJUnit.assertEquals(new Car("Black","KA123").equals(new Car("Blue","kA123")), false);
 		
 	}
 	
@@ -33,6 +33,6 @@ public class CarTest {
 		
 		AssertJUnit.assertFalse(car1.hashCode() == car2.hashCode());
 		AssertJUnit.assertTrue(car1.hashCode() == new Car("Brown","1").hashCode());
-		AssertJUnit.assertTrue(new Car("Black","KA123").hashCode() == new Car("Blue","kA123").hashCode());
+		AssertJUnit.assertFalse(new Car("Black","KA123").hashCode() == new Car("Blue","kA123").hashCode());
 	}
 }

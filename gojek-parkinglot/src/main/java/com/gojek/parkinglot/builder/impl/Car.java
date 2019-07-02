@@ -3,6 +3,11 @@ package com.gojek.parkinglot.builder.impl;
 import com.gojek.parkinglot.builder.Vehicle;
 import com.gojek.parkinglot.constants.Constants;
 
+/**
+ * Implementation of Vehicle Interface
+ * @author shahid
+ *
+ */
 public class Car implements Vehicle{
 	
 	private int slotsize;
@@ -42,7 +47,7 @@ public class Car implements Vehicle{
 		
 		if(this == null)
 			return Constants.DEFAULT_HASHCODE_STRING;
-		return Constants.DEFAULT_HASHCODE_STRING*31+this.regNumber.toLowerCase().hashCode();
+		return Constants.DEFAULT_HASHCODE_STRING*31+this.regNumber.hashCode();
 		
 	}
 	
@@ -51,7 +56,7 @@ public class Car implements Vehicle{
 		
 		if(obj == null || this == null)
 			return false;
-		if(obj instanceof Car && ((Car) obj).getRegistrationNumber().equalsIgnoreCase(this.getRegistrationNumber())) {
+		if(obj instanceof Car && ((Car) obj).getRegistrationNumber().equals(this.getRegistrationNumber())) {
 			return true;
 		}
 		return false;
