@@ -45,6 +45,9 @@ public class ParkingLotImpl implements ParkingLot{
 	@Override
 	public Slot assignSlot(String colour,String regNum) {
 		
+		if(parkingSlots.getOccupiedSlots().getRegNumberToSlot().containsKey(regNum)) {
+			return new Slot(0);
+		}
 		Vehicle v = new Car(colour,regNum);
 		if(parkingSlots.getAvailableSlots().isEmpty())
 			return null;

@@ -31,6 +31,8 @@ public interface ParkingLot {
 	 * @param clour - colour of the Vehicle
 	 * @param regNum - registration Number of the Vehicle 
 	 * @return the slot assigned for parking , if not available return null;
+	 * if vehicle with the same registration number is already present , it will return Slot(0) which is not define
+	 * i.e. on console it will show Error in Assigning Slot - Registration number is not Unique.
 	 */
 	public Slot assignSlot(String clour,String regNum);
 	

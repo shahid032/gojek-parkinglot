@@ -72,6 +72,9 @@ public class CommandImpl implements Command{
 		if(slot == null){
 			System.out.println("Sorry, parking lot is full");
 		}
+		else if(slot.equals(new Slot(0))) {
+			System.out.println("Error in Assigning Slot - Registration number is not Unique");
+		}
 		else{
 			System.out.println("Allocated slot number: "+slot.getId());
 		}

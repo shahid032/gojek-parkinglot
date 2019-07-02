@@ -45,6 +45,8 @@ public class CommandTest {
 		cmd.call(commandId,args.split(" "));
 		args = "KA-01-HH-3141 Black";
 		cmd.call(commandId,args.split(" "));
+		args = "KA-01-HH-3141 Black";
+		cmd.call(commandId,args.split(" "));
 		
 		cmd.call("leave", "4".split(" "));
 		cmd.call("leave", "12".split(" "));
