@@ -67,7 +67,8 @@ public class ParkingLotImpltest {
 		regNumberByColour = parkingLot.getRegNumByColour("Blue");
 		AssertJUnit.assertTrue(regNumberByColour.size() == 4);
 		AssertJUnit.assertTrue(regNumberByColour.get(3).equals("6"));
-	
+		regNumberByColour = parkingLot.getRegNumByColour("NotAvail");
+		AssertJUnit.assertTrue(regNumberByColour.size() == 0);
 	}
 	
 	@Test

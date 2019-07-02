@@ -124,18 +124,21 @@ public class CommandImpl implements Command{
 	private void printAllRegNumByColour(String colour){
 		
 		List<String> allRegNumByColour = parkingLot.getRegNumByColour(colour);
-		for(int i=0;i<allRegNumByColour.size()-1;i++)
-			System.out.print(allRegNumByColour.get(i)+", ");
-		System.out.println(allRegNumByColour.get(allRegNumByColour.size()-1));
+		if(allRegNumByColour.size() > 0) {
+			for(int i=0;i<allRegNumByColour.size()-1;i++)
+				System.out.print(allRegNumByColour.get(i)+", ");
+			System.out.println(allRegNumByColour.get(allRegNumByColour.size()-1));
+		}
 	}
 	
 	private void printAllSlotByClolour(String colour){
 		
 		List<Slot> allSlotNumByColour = parkingLot.getSlotByColour(colour);
-		for(int i=0;i<allSlotNumByColour.size()-1;i++)
-			System.out.print(allSlotNumByColour.get(i).getId()+", ");
-		System.out.println(allSlotNumByColour.get(allSlotNumByColour.size()-1).getId());
-		
+		if(allSlotNumByColour.size() > 0) {
+			for(int i=0;i<allSlotNumByColour.size()-1;i++)
+				System.out.print(allSlotNumByColour.get(i).getId()+", ");
+			System.out.println(allSlotNumByColour.get(allSlotNumByColour.size()-1).getId());
+		}
 	}
 	
 	private void printSlotNumByRegNum(String regNum){
