@@ -129,6 +129,8 @@ public class CommandImpl implements Command{
 				System.out.print(allRegNumByColour.get(i)+", ");
 			System.out.println(allRegNumByColour.get(allRegNumByColour.size()-1));
 		}
+		else
+			System.out.println(Constants.NOT_FOUND);
 	}
 	
 	private void printAllSlotByClolour(String colour){
@@ -139,6 +141,8 @@ public class CommandImpl implements Command{
 				System.out.print(allSlotNumByColour.get(i).getId()+", ");
 			System.out.println(allSlotNumByColour.get(allSlotNumByColour.size()-1).getId());
 		}
+		else
+			System.out.println(Constants.NOT_FOUND);
 	}
 	
 	private void printSlotNumByRegNum(String regNum){
