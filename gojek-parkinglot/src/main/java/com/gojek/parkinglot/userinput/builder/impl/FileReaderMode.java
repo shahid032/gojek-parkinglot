@@ -9,6 +9,12 @@ import java.io.IOException;
 import com.gojek.parkinglot.userinput.builder.InputMode;
 import com.gojek.parkinglot.userinput.builder.Parser;
 
+/**
+ * Implementation of Input Mode as a File Reader Mode
+ * File reader and use Parser to create command Line by line
+ * @author shahid
+ *
+ */
 public class FileReaderMode implements InputMode{
 	
 	String filePath;

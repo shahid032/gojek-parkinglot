@@ -11,6 +11,11 @@ import com.gojek.parkinglot.constants.Constants;
 import com.gojek.parkinglot.userinput.builder.Command;
 import com.gojek.parkinglot.builder.Vehicle;
 
+/**
+ * Implementation of all the User commands
+ * @author shahid
+ *
+ */
 public class CommandImpl implements Command{
 	
 	ParkingLot parkingLot;
