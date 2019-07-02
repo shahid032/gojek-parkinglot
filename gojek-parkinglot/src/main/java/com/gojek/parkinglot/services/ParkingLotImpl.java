@@ -61,7 +61,7 @@ public class ParkingLotImpl implements ParkingLot{
 	@Override
 	public Slot markSlotFree(Slot slot) {
 		
-		if(slot.getId() > parkingSlots.getOccupiedSlots().size()+parkingSlots.getAvailableSlots().size()) {
+		if(slot.getId() > parkingSlots.getOccupiedSlots().size()+parkingSlots.getAvailableSlots().size() || slot.getId() == 0) {
 			return new Slot(0);
 		}
 		Slot freeSlot = parkingSlots.getOccupiedSlots().remove(slot);
