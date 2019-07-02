@@ -28,32 +28,37 @@ public class CommandImpl implements Command{
 	@Override
 	public void call(String commandId, String[] args) throws IOException{
 		
-		if(commandId.equals(Constants.CREATE_PARKING_LOT)){
-			createParkingLot(Integer.parseInt(args[0]));
+		try {
+			if(commandId.equals(Constants.CREATE_PARKING_LOT)){
+				createParkingLot(Integer.parseInt(args[0]));
+			}
+			else if(commandId.equals(Constants.PARK)){
+				park(args[1], args[0]);
+			}
+			else if(commandId.equals(Constants.LEAVE)){
+				leave(new Slot(Integer.parseInt(args[0])));
+			}
+			else if(commandId.equals(Constants.STATUS)){
+				status();
+			}
+			else if(commandId.equals(Constants.REG_NUMS_FOR_VEHICLE_WITH_COLOUR)){
+				printAllRegNumByColour(args[0]);
+			}
+			else if(commandId.equals(Constants.SLOT_NUMS_FOR_VEHICLE_WITH_COLOUR)){
+				printAllSlotByClolour(args[0]);
+			}
+			else if(commandId.equals(Constants.SLOT_NUM_FOR_REG_NUM)){
+				printSlotNumByRegNum(args[0]);
+			}
+			else if(commandId.equals(Constants.EXIT)){
+				System.exit(0);
+			}
+			else{
+				System.out.println(Constants.INVALID_COMMAND);
+			}
 		}
-		else if(commandId.equals(Constants.PARK)){
-			park(args[1], args[0]);
-		}
-		else if(commandId.equals(Constants.LEAVE)){
-			leave(new Slot(Integer.parseInt(args[0])));
-		}
-		else if(commandId.equals(Constants.STATUS)){
-			status();
-		}
-		else if(commandId.equals(Constants.REG_NUMS_FOR_VEHICLE_WITH_COLOUR)){
-			printAllRegNumByColour(args[0]);
-		}
-		else if(commandId.equals(Constants.SLOT_NUMS_FOR_VEHICLE_WITH_COLOUR)){
-			printAllSlotByClolour(args[0]);
-		}
-		else if(commandId.equals(Constants.SLOT_NUM_FOR_REG_NUM)){
-			printSlotNumByRegNum(args[0]);
-		}
-		else if(commandId.equals(Constants.EXIT)){
-			System.exit(0);
-		}
-		else{
-			System.out.println(Constants.INVALID_COMMAND);
+		catch(Exception ex) {
+			System.out.println("Invalid Argument for the given Command \nError : " +ex);
 		}
 		
 	}
