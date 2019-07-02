@@ -58,7 +58,7 @@ public class ParkingLotImpltest {
 		parkingLot.assignSlot("Black","5");
 		parkingLot.assignSlot("Blue","6");
 		parkingLot.getRegNumByColour("Blue");
-		List<String> regNumberByColour = parkingLot.getRegNumByColour("Blue");
+		List<String> regNumberByColour = parkingLot.getRegNumByColour("blue");
 		AssertJUnit.assertTrue(regNumberByColour.size() == 5);
 		AssertJUnit.assertTrue(regNumberByColour.get(4).equals("6"));
 		parkingLot.markSlotFree(new Slot(1));
@@ -76,6 +76,9 @@ public class ParkingLotImpltest {
 		AssertJUnit.assertTrue(parkingLot.getSlotNumByRegNum("2").equals(new Slot(2)));
 		AssertJUnit.assertFalse(parkingLot.getSlotNumByRegNum("2").equals(new Slot(6)));
 		AssertJUnit.assertTrue(parkingLot.getSlotNumByRegNum("12") == null);
+		parkingLot.markSlotFree(new Slot(2));
+		parkingLot.assignSlot("blue", "KawR516");
+		AssertJUnit.assertTrue(parkingLot.getSlotNumByRegNum("kaWr516") == null);
 		
 	}
 	
@@ -90,8 +93,8 @@ public class ParkingLotImpltest {
 		AssertJUnit.assertTrue(parkingLot.getSlotByColour("Blue").size() == 5);
 		parkingLot.markSlotFree(new Slot(1));
 		parkingLot.assignSlot("Black","7");
-		AssertJUnit.assertTrue(parkingLot.getSlotByColour("Blue").size() == 4);
-		AssertJUnit.assertTrue(parkingLot.getSlotByColour("Black").size() == 2);
+		AssertJUnit.assertTrue(parkingLot.getSlotByColour("blue").size() == 4);
+		AssertJUnit.assertTrue(parkingLot.getSlotByColour("black").size() == 2);
 		AssertJUnit.assertTrue(parkingLot.getParkingSlots().getOccupiedSlots().getSlotToVehicle().get(new Slot(1)).getColour().equals("Black"));
 
 	}

@@ -74,8 +74,7 @@ public class ParkingLotImpl implements ParkingLot{
 		Map<Slot,Vehicle> slotToVehicle = parkingSlots.getOccupiedSlots().getSlotToVehicle();
 		for(Entry<String,Slot> regNumToSlotEntry : regNumToSlot.entrySet()){
 			
-			if(slotToVehicle.get(regNumToSlotEntry.getValue()).getColour().equals(colour)){
-				//regNumberByColour.add(regNumToSlotEntry.getKey());
+			if(slotToVehicle.get(regNumToSlotEntry.getValue()).getColour().equalsIgnoreCase(colour)){
 				ArrayList<String> al = new ArrayList<String>();
 				al.add(regNumToSlotEntry.getKey());
 				al.add(String.valueOf(regNumToSlotEntry.getValue().getId()));
@@ -105,7 +104,7 @@ public class ParkingLotImpl implements ParkingLot{
 		Map<Slot,Vehicle> slotToVehicle = parkingSlots.getOccupiedSlots().getSlotToVehicle();
 		for(Entry<Slot,Vehicle> slotToVehicleEntry : slotToVehicle.entrySet()){
 			
-			if(slotToVehicleEntry.getValue().getColour().equals(colour)){
+			if(slotToVehicleEntry.getValue().getColour().equalsIgnoreCase(colour)){
 				slotByColour.add(slotToVehicleEntry.getKey());
 			}
 			
