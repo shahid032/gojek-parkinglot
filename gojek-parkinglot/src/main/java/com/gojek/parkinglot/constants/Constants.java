@@ -9,7 +9,9 @@ public class Constants {
 	
 	public static final int DEFAULT_SIZE = 2;
 	
-	public static final int DEFAULT_HASHCODE = 0;
+	public static final int DEFAULT_HASHCODE_SLOT = 0;
+	
+	public static final int DEFAULT_HASHCODE_STRING = 17;
 	
 	//User commands
 	public static final String CREATE_PARKING_LOT = "create_parking_lot";

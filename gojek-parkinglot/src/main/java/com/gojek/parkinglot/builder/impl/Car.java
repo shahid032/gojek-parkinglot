@@ -41,8 +41,8 @@ public class Car implements Vehicle{
 	public int hashCode() {
 		
 		if(this == null)
-			return Constants.DEFAULT_HASHCODE;
-		return this.regNumber.hashCode();
+			return Constants.DEFAULT_HASHCODE_STRING;
+		return Constants.DEFAULT_HASHCODE_STRING*31+this.regNumber.toLowerCase().hashCode();
 		
 	}
 	
@@ -51,7 +51,7 @@ public class Car implements Vehicle{
 		
 		if(obj == null || this == null)
 			return false;
-		if(obj instanceof Car && ((Car) obj).getRegistrationNumber() == this.getRegistrationNumber()) {
+		if(obj instanceof Car && ((Car) obj).getRegistrationNumber().equalsIgnoreCase(this.getRegistrationNumber())) {
 			return true;
 		}
 		return false;

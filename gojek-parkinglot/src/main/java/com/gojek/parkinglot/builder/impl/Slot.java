@@ -37,7 +37,7 @@ public class Slot {
 	public int hashCode() {
 		
 		if(this == null)
-			return Constants.DEFAULT_HASHCODE;
+			return Constants.DEFAULT_HASHCODE_SLOT;
 		return this.id;
 		
 	}
