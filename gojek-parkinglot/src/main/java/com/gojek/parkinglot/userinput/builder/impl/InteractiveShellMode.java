@@ -7,6 +7,12 @@ import java.io.InputStreamReader;
 import com.gojek.parkinglot.userinput.builder.InputMode;
 import com.gojek.parkinglot.userinput.builder.Parser;
 
+/**
+ * Implements Input Mode and take input line by line and user Parser to create command
+ * will stop when Command "Exit" executes
+ * @author shahid
+ *
+ */
 public class InteractiveShellMode implements InputMode{
 
 	@Override

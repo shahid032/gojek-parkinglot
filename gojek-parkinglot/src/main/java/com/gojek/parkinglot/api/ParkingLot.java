@@ -16,7 +16,7 @@ public interface ParkingLot {
 	/**
 	 * 
 	 * @param totalSlots is the total number of Slot created in Parking Lot
-	 * @return return an object of ParkingSlots
+	 * @return return an true is the Slots are created else return false
 	 */
 	public boolean createParkingLot(int totalSlots);
 	
@@ -44,21 +44,21 @@ public interface ParkingLot {
 	
 	/**
 	 * 
-	 * @param clour - colour of the Vehicle
+	 * @param clour - colour of the Vehicle(not case sensitive)
 	 * @return - List of registration numbers for Vehicle of a particular color
 	 */
 	public List<String> getRegNumByColour(String clour);
 	
 	/**
 	 * 
-	 * @param regNum - Registration number of the Vehicle
+	 * @param regNum - Registration number of the Vehicle (case sensitive)
 	 * @return - the slot it is assigned to and return null in case it is not parked
 	 */
 	public Slot getSlotNumByRegNum(String regNum);
 	
 	/**
 	 * 
-	 * @param colour - colour of the Vehicle
+	 * @param colour - colour of the Vehicle(not case sensitive)
 	 * @return - List of Slot assigned to a Vehicle of the given colour
 	 */
 	public List<Slot> getSlotByColour(String colour);

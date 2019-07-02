@@ -5,6 +5,12 @@ import java.io.IOException;
 import com.gojek.parkinglot.userinput.builder.Command;
 import com.gojek.parkinglot.userinput.builder.Parser;
 
+
+/**
+ * 
+ * @author shahid
+ *
+ */
 public class ParserImpl implements Parser{
 
 	@Override
