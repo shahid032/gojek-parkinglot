@@ -39,6 +39,7 @@ public interface ParkingLot {
 	 * @param slot - is marked free 
 	 * @return - return Slot which is marked free. In case Slot is already free it will return null
 	 * And will print the same output on the console.
+	 * If requested Slot is more than the total slots return Slot 0 which is not define
 	 */
 	public Slot markSlotFree(Slot slot);
 	

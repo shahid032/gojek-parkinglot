@@ -47,6 +47,7 @@ public class CommandTest {
 		cmd.call(commandId,args.split(" "));
 		
 		cmd.call("leave", "4".split(" "));
+		cmd.call("leave", "12".split(" "));
 		AssertJUnit.assertTrue(parkingLot.getParkingSlots().getAvailableSlots().size() == 1);
 		AssertJUnit.assertTrue(parkingLot.getParkingSlots().getOccupiedSlots().size() == 5);
 		

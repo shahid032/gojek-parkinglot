@@ -79,8 +79,13 @@ public class CommandImpl implements Command{
 	
 	private void leave(Slot slot){
 		
-		parkingLot.markSlotFree(slot);
-		System.out.println("Slot number "+slot.getId()+ " is free");
+		Slot outSlot = parkingLot.markSlotFree(slot);
+		if(outSlot.equals(new Slot(0))) {
+			System.out.println("Slot Number entered is not a valid one");
+		}
+		else {
+			System.out.println("Slot number "+slot.getId()+ " is free");
+		}
 		
 	}
 

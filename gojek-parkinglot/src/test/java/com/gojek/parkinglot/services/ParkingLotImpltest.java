@@ -47,7 +47,7 @@ public class ParkingLotImpltest {
 		AssertJUnit.assertTrue(parkingLot.getParkingSlots().getOccupiedSlots().size() == 5);
 		parkingLot.assignSlot("Brown","7");
 		AssertJUnit.assertTrue(parkingLot.getParkingSlots().getOccupiedSlots().getRegNumberToSlot().get("7").equals(new Slot(1)));
-		
+		AssertJUnit.assertTrue(parkingLot.markSlotFree(new Slot(12)).equals(new Slot(0)));
 	}
 	
 	@Test

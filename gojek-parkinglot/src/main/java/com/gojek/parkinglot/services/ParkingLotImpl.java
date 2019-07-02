@@ -54,10 +54,13 @@ public class ParkingLotImpl implements ParkingLot{
 		
 	}
 	
-	// in case of null return. either no Vehicle is parked or that slot is not available
+	// in case of null return. No Vehicle is parked and in case slot requested is more than total slots return slot 0 which is not dfine.
 	@Override
 	public Slot markSlotFree(Slot slot) {
 		
+		if(slot.getId() > parkingSlots.getOccupiedSlots().size()+parkingSlots.getAvailableSlots().size()) {
+			return new Slot(0);
+		}
 		Slot freeSlot = parkingSlots.getOccupiedSlots().remove(slot);
 		if(freeSlot != null){
 			parkingSlots.getAvailableSlots().add(freeSlot);
